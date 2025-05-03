@@ -1,5 +1,5 @@
 // Import CSS so Webpack includes it in the bundle
-import "./style.css";
+import "./styles.css";
 
 // Log to console
 console.log("Hello from Webpack!");
