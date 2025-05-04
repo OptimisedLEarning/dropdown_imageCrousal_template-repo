@@ -1,98 +1,181 @@
-/* Existing styles from Step 3 */
+/* --- General Styles --- */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  margin: 0; /* Remove default body margin */
 }
 
 h1 {
   color: steelblue;
+  text-align: center; /* Center the main heading */
+  margin-top: 20px;
 }
 
-/* --- Dropdown Styles Start Here --- */
+h2 {
+  text-align: center;
+}
 
-/* Container needs position relative for absolute positioning of content */
+p {
+  text-align: center;
+}
+
+/* --- Navigation Bar Styling --- */
+nav {
+  background-color: #333; /* Darker background for a common nav look */
+  padding: 0 20px; /* Add horizontal padding inside the nav */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow below the nav */
+}
+
+nav ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes default list padding */
+  margin: 0; /* Removes default list margin */
+  display: flex; /* Arrange list items horizontally */
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center; /* Vertically align items in the middle */
+}
+
+nav li {
+  /* Remove your complex flex/justify/align styles from here */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  position: relative; /* Keep this! Essential for dropdown content absolute positioning */
+  display: flex; /* Use flex to center content WITHIN the li */
+  align-items: center; /* Vertically center content within li */
+  /* border: none; /* Remove border */
+}
+
+nav li:last-child {
+  /* Add margin only between items, not after the last one */
+  margin-right: 0;
+}
+
+/* Style for links INSIDE the nav */
+nav a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* White text color */
+  padding: 15px 20px; /* Add padding to the clickable area */
+  display: block; /* Make the padding area clickable */
+  /* border: none; /* Remove border */
+}
+
+nav a:hover {
+  background-color: #555; /* Slightly lighter background on hover */
+}
+
+.dropdown {
+  /* Target the li with class="dropdown" */
+  margin-left: auto; /* <-- Push this item as far left as possible, effectively aligning it to the right */
+  /* You might need to remove padding from here if it was on the li and causing issues */
+  padding: 0; /* Ensure padding is on the content/button inside */
+  display: flex; /* Keep display flex if centering content inside li */
+  align-items: center; /* Keep centering */
+}
+
+/* --- Dropdown Styling --- */
+
+/* Container needs position relative (already did this) - keep it */
+/* It's inside an li which is relative, but container itself needs relative */
 .dropdown-container {
-  position: relative;
-  display: inline-block; /* Arrange multiple dropdowns nicely */
-  margin: 10px; /* Add some space around them */
+  /* Adjust these styles when inside a nav li */
+  position: relative; /* Keep relative */
+  display: block; /* Make it a block element within the li */
+  margin: 0; /* Remove margin if inside nav li */
+  padding: 0 15px; /* Add padding matching nav a, but only if needed */
+  /* Often, the button inside gets the padding instead */
+  /* Let's remove padding here and put it on the button */
+  /* background-color: orange; /* Optional: helps visualize container */
 }
 
 /* Style for the button that opens/closes the dropdown */
 .dropdown-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  cursor: pointer; /* Indicates it's interactive */
+  /* Adjust styles for button when inside a nav li */
+  padding: 15px 20px; /* Give the button padding similar to nav links */
+  font-size: 1em; /* Use relative font size */
+  border: none; /* Remove border to blend with nav */
+  background-color: transparent; /* No background */
+  color: white; /* White text color */
+  cursor: pointer;
+  /* Ensure it doesn't affect li layout too much */
+  display: block; /* Make it take full width within container/li */
+  width: 100%; /* Make it take full width */
+  text-align: left; /* Align text to the left */
+}
+
+.dropdown-button:hover {
+  background-color: #555; /* Match nav link hover */
 }
 
 /* Style for the content (the menu itself) */
 .dropdown-content {
-  /* Position it relative to the container */
   position: absolute;
-  top: 100%; /* Position below the button */
-  left: 0; /* Align to the left of the button */
+  top: 100%; /* Position directly below the button/container */
+  left: 0; /* Align to the left of the container/li */
 
-  background-color: #fff;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Add a shadow */
-  z-index: 1000; /* Ensure it's on top of other page elements */
+  background-color: #fff; /* White background for the dropdown items */
+  min-width: 180px; /* Minimum width */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* High z-index to appear above other content */
   border-radius: 4px;
-  overflow: hidden; /* Cleans up corners */
+  overflow: hidden; /* Hide anything outside the rounded corners */
+  border: 1px solid #ddd; /* Add a light border */
 
-  /* --- Default state: HIDDEN --- */
-  display: none; /* Hide the element completely by default */
+  /* --- Default state: HIDDEN (using opacity/visibility for smooth transition) --- */
+  opacity: 0; /* Start fully transparent */
+  visibility: hidden; /* Make it not interactable */
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease; /* Smooth transition for showing/hiding */
+  /* Make sure display is NOT 'none' here if using opacity/visibility */
 }
 
-/* Style for list items and links inside the content (if using ul/li) */
+/* Style for list items and links INSIDE the dropdown content */
 .dropdown-content ul {
-  list-style: none; /* Remove bullet points */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .dropdown-content li {
-  padding: 0; /* Remove default li padding */
+  /* Styles for items WITHIN the dropdown menu */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  /* border-bottom: 1px solid #eee; /* Optional: add dividers */
 }
 
+/* Style for links or paragraphs INSIDE the dropdown content */
 .dropdown-content a,
 .dropdown-content p {
-  /* Also style paragraph content if not using a list */
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none; /* Remove underline for links */
+  color: #333; /* Darker text color */
+  padding: 10px 16px; /* Padding inside each menu item */
+  text-decoration: none;
   display: block; /* Make the whole area clickable/styleable */
-  margin: 0; /* Remove default paragraph margins */
+  margin: 0;
+  font-size: 0.9em; /* Slightly smaller font size */
 }
 
 .dropdown-content a:hover,
 .dropdown-content p:hover {
-  background-color: #ddd; /* Highlight on hover */
+  background-color: #f0f0f0; /* Light grey background on hover */
+  color: #000; /* Darker text on hover */
 }
 
-/* --- State when JS adds the 'visible' class: SHOWN --- */
+/* --- State when JS adds the 'visible' class: SHOWN (using opacity/visibility) --- */
 .dropdown-content.visible {
-  display: block; /* Override display: none to make it visible */
+  opacity: 1; /* Fully opaque */
+  visibility: visible; /* Make it interactable again */
+  /* Make sure display is NOT 'none' here if using opacity/visibility */
 }
 
-nav {
-  background-color: #333;
-  color: white;
-  padding: 1px;
-}
-nav ul {
-  list-style: none;
-  margin-right: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+/* --- Example of styling the other dropdown container outside the nav --- */
+/* This dropdown container might need different top/left positioning if not in a nav */
+/* Or its positioning might be fine depending on where it's placed */
+/* .dropdown-container {
+    margin-top: 20px;
+    margin-left: 20px;
+} */
 
-  border: 1px solid #ccc;
-  border-radius: 1px;
-  font-weight: bolder;
-  font-style: italic;
-  font-size: larger;
-}
-
-/* --- Dropdown Styles End Here --- */
+/* Remove the global a style border unless you want it everywhere */
+/* a {
+  border: yellow 1px solid;
+} */

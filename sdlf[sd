@@ -1,0 +1,29 @@
+[33mcommit 6d42a7949004fba0991bb3eb93885819df9f371f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: OptimisedLEarning <158731825+OptimisedLEarning@users.noreply.github.com>
+Date:   Sun May 4 14:49:16 2025 +0530
+
+    Adding content to template.html
+
+[33mcommit 469934aeaa7691ec121a2f7f6312048ec152cfb4[m
+Author: OptimisedLEarning <158731825+OptimisedLEarning@users.noreply.github.com>
+Date:   Sat May 3 18:39:44 2025 +0530
+
+     added ropdown code getting dome errors with npx serv and npx webpack
+
+[33mcommit 8af33582a1ec0e1961413ea51246c4e13958107b[m
+Author: OptimisedLEarning <158731825+OptimisedLEarning@users.noreply.github.com>
+Date:   Sat May 3 18:29:28 2025 +0530
+
+    added normal settings and chekking evry thing woks well or not
+
+[33mcommit 106d2b464f68d3e7c36b826c83a186001a785430[m
+Author: OptimisedLEarning <158731825+OptimisedLEarning@users.noreply.github.com>
+Date:   Sat May 3 17:37:33 2025 +0530
+
+    addded basic html and installed webpack
+
+[33mcommit defa8fe506dfb793d19f4b4ab68cf45c4ee01f11[m
+Author: OptimisedLEarning <158731825+OptimisedLEarning@users.noreply.github.com>
+Date:   Sat May 3 17:09:33 2025 +0530
+
+    Initial commit

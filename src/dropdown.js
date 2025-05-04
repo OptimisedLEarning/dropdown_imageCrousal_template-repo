@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Find the parent container of the button that has the class 'dropdown-container'
     // .closest() is useful because the click might be on the button itself or an icon inside it.
-    const container = button.closest("dropdown-container");
+    const container = button.closest(".dropdown-container");
 
     // If we found a container (should always be true based on our HTML structure)
     if (container) {
