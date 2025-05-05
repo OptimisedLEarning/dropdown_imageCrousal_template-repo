@@ -3,6 +3,7 @@ import "./styles.css";
 
 import "./dropdown.js"; // <-- ADD THIS LINE to include your dropdown logic
 
+import "./crousol.js"; // <-- ADD THIS LINE to include your carousel logic
 // Log to console
 console.log("Hello from Webpack!");
 
