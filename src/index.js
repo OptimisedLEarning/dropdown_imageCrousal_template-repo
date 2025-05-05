@@ -29,15 +29,7 @@ document.body.appendChild(form);
 
 // ... rest of your existing index.js code ...
 
-// You might remove or keep the example code below, it's not part of the dropdown
-function createHeading() {
-  const element = document.createElement("h2");
-  element.textContent = "JavaScript is bundled!";
-  return element;
-}
-document.body.appendChild(createHeading());
-
 // Add a footer to the page
 const footer = document.createElement("footer");
-footer.textContent = "This is the footer";
+footer.textContent = "Copyright © 2025 Akshya Kumar . All rights reserved .";
 document.body.appendChild(footer);

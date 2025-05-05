@@ -392,3 +392,138 @@ nav a:hover {
   width: 100%; /* Make images fill their container width */
   height: auto; /* Maintain aspect ratio */
 }
+
+/* Add these styles to your existing style.css file */
+
+/* --- Basic Nav Styling (keep or adjust based on your previous refined version) --- */
+/* ... (styles for nav, nav ul, nav li, nav a, .dropdown, .dropdown-container, .dropdown-button, .dropdown-button .fas) ... */
+
+/* --- Dropdown Content Styling (keep or adjust based on your previous refined version) --- */
+/* ... (.dropdown-content, .dropdown-content ul, .dropdown-content li, .dropdown-content a, .dropdown-content p, hover styles, .dropdown-content.visible) ... */
+
+/* --- Image Carousel Styles --- */
+
+/* Container is the 'frame' */
+.slideshow-container {
+  max-width: 800px; /* Set a max width */
+  position: relative; /* For positioning arrows/dots */
+  margin: 20px auto; /* Center and add margin */
+  overflow: hidden; /* CRITICAL: Hides images outside the frame */
+  border: 1px solid #ccc; /* Optional border */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+/* Individual slide */
+.mySlides {
+  display: none; /* Start hidden (JS makes one visible) */
+  width: 100%; /* Make slide container take full width */
+}
+
+.mySlides img {
+  width: 100%; /* Make image fill the slide container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure image is a block element */
+}
+
+/* Add a fade animation (if using the 'fade' class in HTML/JS) */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Next & previous buttons (arrows) */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute; /* Position relative to .slideshow-container */
+  top: 50%; /* Center vertically */
+  width: auto;
+  padding: 16px;
+  margin-top: -22px; /* Adjust vertical centering */
+  color: white; /* White arrows */
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 10; /* Ensure arrows are clickable above images */
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, make background less transparent */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* The dots/bullets/indicators container */
+.dot-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* The dots */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb; /* Grey color */
+  border-radius: 50%; /* Make it round */
+  display: inline-block; /* Arrange them horizontally */
+  transition: background-color 0.6s ease; /* Smooth color change */
+}
+
+/* The active dot or dot on hover */
+.active,
+.dot:hover {
+  background-color: #717171; /* Darker grey when active or hovered */
+}
+
+/* footer */
+footer {
+  background-color: #333; /* Darker background for footer */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 20px; /* Add padding */
+  position: relative; /* Position relative for any absolute children */
+  bottom: 0; /* Stick to the bottom of the page */
+  width: 100%; /* Full width */
+}
