@@ -172,19 +172,16 @@ nav a:hover {
   margin: 20px auto;
   position: relative;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 1px solid #ee4242;
   background-color: white;
   max-width: 800px;
   height: 400px; /* ✅ Set fixed height */
-  margin: 20px auto;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: white;
 }
 
 .mySlides {
   display: none;
+  width: 100%;
+  height: 100%; /* ✅ Set fixed height */
 }
 
 .fade {
@@ -248,11 +245,16 @@ nav a:hover {
   top: 0;
 }
 
+.dot-container {
+  text-align: center;
+  padding: 10px 0;
+}
+
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 25px;
+  width: 25px;
+  margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -267,19 +269,10 @@ nav a:hover {
 /* Make sure images take up full container height */
 .slideshow-container img {
   width: 100%;
-  height: auto; /* ✅ Ensure full height */
+  height: 100%; /* ✅ Ensure full height */
   object-fit: contain; /* ✅ Crop/fit image nicely */
   display: block;
-  max-height: 100%; /* ✅ Ensure images do not exceed container height */
-  max-width: 100%; /* ✅ Ensure images do not exceed container width */
   margin: auto; /* Center images */
-}
-
-img {
-  width: 100%;
-  height: 50%; /* Maintain aspect ratio */
-  object-fit: contain; /* Crop/fit image nicely */
-  display: block;
 }
 
 footer {
@@ -297,4 +290,50 @@ footer {
   .slideshow-container {
     height: 250px; /* smaller height on mobile */
   }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .dropdown-button {
+    text-align: left;
+    width: 100%;
+  }
+
+  .slideshow-container {
+    max-width: 100%;
+  }
+}
+
+/* Style the search form inside nav */
+nav .search-form {
+  display: flex;
+  margin-left: auto; /* Push it to the right */
+  gap: 8px;
+  align-items: center;
+}
+
+nav .search-form input {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+nav .search-form button {
+  padding: 6px 12px;
+  border: none;
+  background-color: steelblue;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+nav .search-form button:hover {
+  background-color: #4682b4;
 }

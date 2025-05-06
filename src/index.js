@@ -7,7 +7,7 @@ import "./crousol.js"; // <-- ADD THIS LINE to include your carousel logic
 
 //import images from src folder
 import img1 from "./img1.jpg";
-import img2 from "./img2.jpg";
+import img2 from "./img2.jpeg";
 import img3 from "./img3.jpg";
 
 const images = [img1, img2, img3]; // Array of image paths
@@ -30,20 +30,38 @@ const heading = document.createElement("h2");
 heading.textContent = "$ITEACH$";
 document.body.appendChild(heading);
 
-// Add a form to the page
-const form = document.createElement("form");
-const input = document.createElement("input");
-input.type = "text";
-input.placeholder = "Type something...";
-const submitButton = document.createElement("button");
-submitButton.textContent = "Submit";
-form.appendChild(input);
-form.appendChild(submitButton);
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  alert(`You typed: ${input.value}`);
-});
-document.body.appendChild(form);
+// Get the <ul> inside .navbar
+const navBar = document.querySelector(".navbar ul");
+
+if (navBar) {
+  // Create a <li> to hold the form
+  const searchLi = document.createElement("li");
+  searchLi.classList.add("search-form-item");
+
+  // Create the form
+  const form = document.createElement("form");
+  form.classList.add("search-form");
+
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Search...";
+  input.setAttribute("aria-label", "Search");
+
+  const submitButton = document.createElement("button");
+  submitButton.textContent = "Search";
+
+  form.appendChild(input);
+  form.appendChild(submitButton);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    alert(`You want to search this: ${input.value}`);
+  });
+
+  // Put form inside the <li> and add to <ul>
+  searchLi.appendChild(form);
+  navBar.appendChild(searchLi); // Add it after dropdown
+}
 
 // ... rest of your existing index.js code ...
 
