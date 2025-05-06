@@ -27,7 +27,7 @@ console.log("Hello from Webpack!");
 
 // Add something to the page
 const heading = document.createElement("h2");
-heading.textContent = "Webpack is working!";
+heading.textContent = "$ITEACH$";
 document.body.appendChild(heading);
 
 // Add a form to the page
