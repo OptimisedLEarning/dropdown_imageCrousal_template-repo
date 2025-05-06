@@ -48,10 +48,16 @@ export default {
       },
       // Add more rules here for other file types you might use (images, fonts, etc.)
       // Example rule for images (you'd add this and install necessary loaders if your template needed images):
-      // {
-      //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-      //   type: 'asset/resource', // Built-in Webpack 5 type to handle assets like images
-      // },
+      // Rule 3: Process image files (like .png, .jpg, etc.)
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource", // Built-in Webpack 5 type to handle assets like images
+      },
     ],
   },
 

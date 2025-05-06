@@ -4,6 +4,24 @@ import "./styles.css";
 import "./dropdown.js"; // <-- ADD THIS LINE to include your dropdown logic
 
 import "./crousol.js"; // <-- ADD THIS LINE to include your carousel logic
+
+//import images from src folder
+import img1 from "./img1.jpg";
+import img2 from "./img2.jpg";
+import img3 from "./img3.jpg";
+
+const images = [img1, img2, img3]; // Array of image paths
+
+images.forEach((src, index) => {
+  const imgElement = document.querySelector(`.slide${index + 1}`);
+  // Select the image element for each slide
+  if (imgElement) {
+    // Check if the element exists
+    imgElement.src = src;
+    // Set the src attribute to the image path
+  }
+});
+
 // Log to console
 console.log("Hello from Webpack!");
 

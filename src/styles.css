@@ -527,3 +527,9 @@ footer {
   bottom: 0; /* Stick to the bottom of the page */
   width: 100%; /* Full width */
 }
+
+.slideshow-container {
+  height: "400px";
+  width: "100%";
+  margin: "auto";
+}
