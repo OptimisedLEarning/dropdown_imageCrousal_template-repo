@@ -63,6 +63,21 @@ if (navBar) {
   navBar.appendChild(searchLi); // Add it after dropdown
 }
 
+// Api  learnig
+const img = document.getElementById("cat");
+fetch(
+  "https://api.giphy.com/v1/gifs/translate?api_key=YJI7BnQjeoFnQdhoQgLbODY81fbyvlpW&s=cat",
+  { mode: "cors" }
+)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    img.src = response.data.images.original.url;
+  })
+  .catch((e) => {
+    console.log(e);
+  });
 // ... rest of your existing index.js code ...
 
 // Add a footer to the page
